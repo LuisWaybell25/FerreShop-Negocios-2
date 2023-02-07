@@ -1,0 +1,71 @@
+
+
+.contenedor {
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-contenedor {
+    width: 30%;
+    min-width: 300px;
+    margin: 0;
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+    border: 1px solid darkgray;
+}
+
+.login-contenedor .logo-login {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.login-contenedor .logo-login .text-logo {
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 2rem;
+    font-family: 'Comfortaa', cursive;   
+    background: #23232e;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-contenedor .titulo {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.login-contenedor .btnLogin {
+    border: 1px solid #1885dd;
+    background-color: #FFFFFF;
+    color: #1885dd;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.login-contenedor .btnLogin:hover {
+    background-color: #1885dd;
+    color: #FFFFFF;
+}

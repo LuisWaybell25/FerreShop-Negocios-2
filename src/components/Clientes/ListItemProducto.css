@@ -1,0 +1,170 @@
+.card {
+    position: relative;
+    max-width: 100%;
+    height: fit-content;
+    margin: 1.25rem;
+    background-color: white;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column;   */
+    /* z-index: 30; */
+}
+
+.card.link {
+    cursor: pointer;
+}
+
+/* .card.card {
+} */
+
+.productos {
+    /* width: 100%; */
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.total {
+    /* width: 100%; */
+    /* align-self: center; */
+    padding: 0;
+    /* box-sizing: border-box; */
+    margin: auto;
+}
+
+.card.horizontal {
+    /* width: 100%;
+    max-width: 50%; */
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.card .categoria {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem; 
+    line-height: 1rem; 
+    font-style: italic;
+    color: #9ca3af;
+}
+
+.card.horizontal .categoria {
+    left: 0.5rem;
+}
+
+.card .imagen {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.card.horizontal .img-contenedor {
+    width: 100%;
+    min-width: 4rem;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.card.horizontal .info-contenedor {
+    width: 100%;
+}
+
+.card.horizontal .info-contenedor .acciones{
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.card.horizontal .imagen {
+    margin: 0;
+    grid-row: 1 / 5;
+    width: auto;
+    max-height: 10rem;
+}
+
+.card .title {
+    /* width: 100%; */
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.card.horizontal .title {
+    grid-column: 2 / 3;
+}
+
+.card .autor,
+.card .descripcion {
+    /* width: 100%; */
+    /* flex-grow: 1;
+        flex-basis: 0;  */
+    font-size: 0.75rem; 
+    line-height: 1rem;  
+    margin-top: 0.5rem; 
+    margin-bottom: 0.5rem;  
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.card.horizontal .autor,
+.card.horizontal .descripcion,
+.card.horizontal .precio {
+    grid-column: 2 / 3;
+}
+
+.card .autor span {
+    font-weight: 600;
+}
+
+.card .precio {
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.card .delivery {
+    display: flex;
+    align-items: center;
+    margin-top: -1.25rem;
+    margin-left: 0.5rem; 
+}
+.card .delivery img{
+    width: 3rem;
+}
+.card .delivery p{
+    font-size: 0.75rem; 
+    line-height: 1rem; 
+    color: #6b7280;
+    margin: 0 0 0 0.25rem;
+}
+
+@media (min-width: 1024px) {
+    .productos {
+        width: 70%;
+    }
+    
+    .total {
+        width: 25%;
+        margin: 0 auto;
+        align-self: flex-start;
+        position: sticky;
+        top: 0;
+    }
+
+    .card.horizontal .info-contenedor {
+        width: 70%;
+    }
+
+    .card.horizontal .img-contenedor {
+        width: 20%;
+        /* justify-content: flex-start; */
+    }
+}

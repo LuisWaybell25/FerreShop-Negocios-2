@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "correo": "luis@gmail.com",
+        "nombre": "Luis Roberto Waybell Campos",
+        "rol": "Administrador"
+    },
+    {
+        "id": 2,
+        "correo": "jasso@gmail.com",
+        "nombre": "Luis Fernando Jasso Frausto",
+        "rol": "Usuario"
+    },
+    {
+        "id": 3,
+        "correo": "juan@gmail.com",
+        "nombre": "Juan Manuel González Durón",
+        "rol": "Administrador"
+    },
+    {
+        "id": 4,
+        "correo": "luis@gmail.com",
+        "nombre": "Iran Mendoza De La Torre",
+        "rol": "Usuario"
+    }
+]

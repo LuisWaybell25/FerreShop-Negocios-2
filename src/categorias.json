@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Herramientas manuales",
+        "descripcion": "Utensilio, generalmente metálico de acero, madera, fibra, plástico o goma, que se utiliza para ejecutar de manera más apropiada, sencilla y con el uso de menor energía, tareas constructivas o de reparación."
+    },
+    {
+        "id": 2,
+        "nombre": "Herramientas eléctricas",
+        "descripcion": "Cuando tenemos la necesidad de crear, fabricar, reparar o mejorar algo debemos acudir a las herramientas eléctricas. Estas nos facilitan enormemente actividades pesadas en diferentes ámbitos. Nuestra vida se hace más simple de llevar si contamos con estos productos."
+    },
+    {
+        "id": 3,
+        "nombre": "Calzado de seguridad",
+        "descripcion": "El calzado de seguridad es una de las partes del vestuario laboral más importantes. Su uso está especialmente recomendado en trabajos en los que se esté expuesto a impactos o cortes, así como en determinadas superficies."
+    },
+    {
+        "id": 4,
+        "nombre": "Herramientas de medición",
+        "descripcion": "Un instrumento de medición es una herramienta que se usa para medir una magnitud física. La medición es el proceso que permite obtener y comparar cantidades físicas de objetos y fenómenos del mundo real."
+    }
+]

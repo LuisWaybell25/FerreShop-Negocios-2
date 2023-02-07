@@ -1,0 +1,28 @@
+.contenedor-progreso {
+    width: 100%;
+    padding: 0.25rem;
+    display: flex;
+    /* flex-wrap: wrap; */
+    font-size: 0.8rem;
+    font-weight: 500;
+    align-items: center;
+}
+.contenedor-progreso.sm{
+    width: 30%;
+}
+.contenedor-progreso.md{
+    width: 50%;
+}
+.contenedor-progreso.lg{
+    width: 70%;
+}
+
+.estrellas {
+    margin-left: 1rem;
+}
+
+.estrellas,
+.porcentaje-progreso {
+    color: rgba(0,0,0,.35);
+    margin-bottom: 0;
+}

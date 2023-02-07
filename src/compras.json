@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "usuario": "waybell@gmail.com",
+        "producto": "M18 FUEL MOTOSIERRA",
+        "cantidad": 1,
+        "fecha": "03/12/22",
+        "total": "13,649"
+    },
+    {
+        "id": 2,
+        "usuario": "marian@gmail.com",
+        "producto": "Milwaukee 2962-20 M18 18V Fuel",
+        "cantidad": 4,
+        "fecha": "03/12/22",
+        "total": "10,227"
+    },
+    {
+        "id": 3,
+        "usuario": "jasso@gmail.com",
+        "producto": "Surtek 115082 Pinza de Presión",
+        "cantidad": 3,
+        "fecha": "01/12/22",
+        "total": "15,233"
+    },
+    {
+        "id": 4,
+        "usuario": "juan@gmail.com",
+        "producto": "Esmeriladora Angular, 4 1/2",
+        "cantidad": 5,
+        "fecha": "02/12/22",
+        "total": "1,500"
+    },
+    {
+        "id": 5,
+        "usuario": "iran@gmail.com",
+        "producto": "Sierra Caladora Pendular Urrea",
+        "cantidad": 4,
+        "fecha": "03/12/22",
+        "total": "2,000"
+    },
+    {
+        "id": 6,
+        "usuario": "carlos@gmail.com",
+        "producto": "Compresor 2hp 25l Urrea Comp825",
+        "cantidad": 1,
+        "fecha": "13/12/22",
+        "total": "4,564"
+    },
+    {
+        "id": 7,
+        "usuario": "jelipe@gmail.com",
+        "producto": "Milwuakee 2804-22 Drill",
+        "cantidad": 4,
+        "fecha": "03/12/22",
+        "total": "6,590"
+    },
+    {
+        "id": 8,
+        "usuario": "bennet@gmail.com",
+        "producto": "Soldadora 250 Amps 2 Ciclos",
+        "cantidad": 2,
+        "fecha": "23/12/22",
+        "total": "8,000"
+    },
+    {
+        "id": 9,
+        "usuario": "erik@gmail.com",
+        "producto": "Bomba Centrífuga Surtek",
+        "cantidad": 3,
+        "fecha": "16/12/22",
+        "total": "5,000"
+    },
+    {
+        "id": 10,
+        "usuario": "aldo@gmail.com",
+        "producto": "Esmeril De Banco",
+        "cantidad": 4,
+        "fecha": "21/12/22",
+        "total": "7,655"
+    }
+]

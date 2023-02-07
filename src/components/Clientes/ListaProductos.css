@@ -1,0 +1,44 @@
+.lista-grid {
+    display: grid;
+    grid-auto-flow: row dense;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-banner {
+    max-width: 100%;
+    height: auto;
+}
+
+/* mediano */
+@media (min-width: 768px) {
+    .lista-grid {
+        /* margin-top: -13rem; */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* .card .imagen {
+        height: 30%;
+    } */
+    
+    .img-banner {
+        grid-column: 1/-1;
+    }
+}
+
+/* grande */
+@media (min-width: 1024px) {
+    .lista-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+/* extragrande */
+@media (min-width: 1280px) {
+    .lista-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}

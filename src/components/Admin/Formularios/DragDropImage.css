@@ -1,0 +1,112 @@
+.input-file-upload {
+    display: none !important;
+    /* border: 3px solid red; */
+}
+
+.dragImageContainer{
+    width: 100%;
+    max-width: 100%;
+    height: 12.75rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid #ced4da;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.image-preview {
+    height: 100%;
+    /* width: 28rem; */
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .2s ease-in-out;
+}
+
+.layer:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.label-file-upload {
+    height: 12.75rem;
+    /* width: 28rem; */
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    border: 2px dashed #ced4da;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.was-validated .form-control:invalid + .label-file-upload {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:valid + .dragImageContainer {
+    border-color: #198754;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+  
+.upload-button {
+    cursor: pointer;
+    padding: 0.25rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    margin: 0;
+    /* font-family: 'Oswald', sans-serif; */
+    background-color: transparent;
+}
+
+.label-file-upload.drag-active {
+    /* background-color: #ffffff; */
+    background-color: #f8fafc;
+}
+.dragImageContainer.drag-active > .layer {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.upload-button:hover,
+.label-file-upload.drag-active > div .upload-button{
+    color: #0d6efd;
+}
+
+.upload-button:active,
+.upload-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(49,132,253,.5);;
+}
+
+#drag-file-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}

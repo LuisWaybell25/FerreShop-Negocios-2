@@ -1,0 +1,62 @@
+.contenedor-opiniones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-valoraciones {
+    width: 100%;
+    height: fit-content;
+}
+
+.wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-valoraciones .valoracion {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+.cantidad-valoraciones {
+    margin: 0;
+}
+
+.lista-opiniones {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.card-opinion {
+    padding: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.175);
+    border-bottom: 0;
+}
+
+
+/* grande */
+@media (min-width: 1024px) {
+   .card-valoraciones {
+        /* width: 25%;
+        margin: 0 auto;
+        align-self: flex-start; */
+        margin-top: 1rem;
+        position: sticky;
+        top: 0;
+    }
+
+    .card-valoraciones {
+        width: 25%;
+    }
+
+    .lista-opiniones {
+        width: 65%;
+    }
+
+    .card-opinion {
+        border-top: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+    }
+}

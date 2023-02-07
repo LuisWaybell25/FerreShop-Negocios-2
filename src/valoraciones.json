@@ -1,0 +1,206 @@
+[
+    {
+        "id": "1",
+        "producto": "2",
+        "estrellas": 5,
+        "comentario": "Me Encanta el producto."
+    },
+    {
+        "id": "2",
+        "producto": "2",
+        "estrellas": 5,
+        "comentario": "El taladro es muy práctico y no pesa, lo puedes sujetar con facilidad; además viene con su propio cargador y baterias, para no batallar en buscar otro accesorio más. Me encantó que viniera cada una de las herramientas para casa, desde pinzas hasta tornillos. Sin dudas un buen regalo para navidad."
+    },
+    {
+        "id": "3",
+        "producto": "2",
+        "estrellas": 5,
+        "comentario": "Recomiendo encarecidamente esto. Lo uso a diario y aguanta bien. Buena duración de la batería, incluso cortando roble. Para las probabilidades y los extremos en una granja con muchos senderos y árboles, esto es más que útil. ¡Buen producto!"
+    },
+    {
+        "id": "5",
+        "producto": "1",
+        "estrellas": 5,
+        "comentario": "Permítanme comenzar diciendo que amo la mía. Cualquiera que haya usado una motosierra de gasolina se ha topado con el problema de hacer muchos trabajos pequeños y tener que reiniciar la sierra una y otra vez. Esto no es un problema con una sierra a batería. Aprieta el gatillo y listo. El único problema es que debe ajustarse un poco más que las motosierras de gasolina que he usado. Además, el servicio de atención al cliente de Milwaulkee es una broma, así que tenlo en cuenta."
+    },
+    {
+        "id": "6",
+        "producto": "1",
+        "estrellas": 5,
+        "comentario": "Ahorré mucho dinero en comparación con otras sierras."
+    },
+    {
+        "id": "7",
+        "producto": "4",
+        "estrellas": 5,
+        "comentario": "Excelente producto."
+    },
+    {
+        "id": "8",
+        "producto": "4",
+        "estrellas": 4,
+        "comentario": "La esmeriladora trabaja muy bien."
+    },
+    {
+        "id": "9",
+        "producto": "7",
+        "estrellas": 4,
+        "comentario": "Milwaukee es garantía, no hay duda alguna. Una marca de herramienta excelente."
+    },
+    {
+        "id": "10",
+        "producto": "11",
+        "estrellas": 5,
+        "comentario": "Me gustó mucho la calidad y la resistencia, ya que, las uso en mi trabajo, son aguantadoras y por el precio están muy bien."
+    },
+    {
+        "id": "11",
+        "producto": "11",
+        "estrellas": 4,
+        "comentario": "Muy buenas botas para trabajo."
+    },
+    {
+        "id": "12",
+        "producto": "11",
+        "estrellas": 5,
+        "comentario": "Excelentes botas, buen material y resistentes."
+    },
+    {
+        "id": "13",
+        "producto": "11",
+        "estrellas": 4,
+        "comentario": "Las botas están bien en cuanto relación costo-calidad, por mi trabajo estoy acostumbrado a traer botas y en ocasiones estar casi todo el día de pie, estas botas las siento muy duras y les tuve que poner otra plantilla para no cansarme tanto."
+    },
+    {
+        "id": "14",
+        "producto": "14",
+        "estrellas": 5,
+        "comentario": "Muy cómodas."
+    },
+    {
+        "id": "15",
+        "producto": "14",
+        "estrellas": 5,
+        "comentario": "Son unas botas bastante amplias, además de cómodas y de muy buena calidad. Excelente producto."
+    },
+    {
+        "id": "16",
+        "producto": "16",
+        "estrellas": 5,
+        "comentario": "Me gustó. Es práctico y fácil de usar."
+    },
+    {
+        "id": "17",
+        "producto": "16",
+        "estrellas": 5,
+        "comentario": "Muy buen producto, básico para el taller. Muy fácil de usar, con buena precisión."
+    },
+    {
+        "id": "18",
+        "producto": "16",
+        "estrellas": 5,
+        "comentario": "Es un calibrador excelente para mediciones rápidas, incluso para aproximar medidas. Es perfecto es para medir espesores de placa, diámetros de barras e incluso en horticultura para medir calibres de algunos frutos."
+    },
+    {
+        "id": "19",
+        "producto": "19",
+        "estrellas": 5,
+        "comentario": "Duradero y fácil de usar, contento con el producto."
+    },
+    {
+        "id": "20",
+        "producto": "19",
+        "estrellas": 5,
+        "comentario": "Genial. Excelente, fácil de trasportar y de trabajar con él."
+    },
+    {
+        "id": "21",
+        "producto": "19",
+        "estrellas": 5,
+        "comentario": "Excelemte calidad, ligero, práctico, cómodo de usar y muy resistente. Lo mejor que hay en nivel de mano."
+    },
+    {
+        "id": "22",
+        "producto": "19",
+        "estrellas": 5,
+        "comentario": "Resistente, gran imán, compacto y práctico. Recomendable."
+    },
+    {
+        "id": "23",
+        "producto": "19",
+        "estrellas": 5,
+        "comentario": "De buena calidad, cumple las expectativas al 100%. Muy recomendado."
+    },
+    {
+        "id": "24",
+        "producto": "10",
+        "estrellas": 5,
+        "comentario": "Buen producto, es el único que encontré en el mercado con piedra de 6 pulgadas y 3/4 de caballo, todos los de las demás marcas vienen a 1/2 caballo, además que le puedes colocar piedra de 1 pulgada de espesor. En conclusión, es mucho mejor este producto, con más potencia y más robusto."
+    },
+    {
+        "id": "25",
+        "producto": "10",
+        "estrellas": 5,
+        "comentario": " Quedo satisfecho con su desempeño. Se ve robusto y bueno para el trabajo en casa o taller."
+    },
+    {
+        "id": "26",
+        "producto": "5",
+        "estrellas": 5,
+        "comentario": "Buen producto. Recomendable."
+    },
+    {
+        "id": "27",
+        "producto": "3",
+        "estrellas": 4,
+        "comentario": "Excelente calidad. La volvería a comprar."
+    },
+    {
+        "id": "28",
+        "producto": "6",
+        "estrellas": 4,
+        "comentario": "Estoy satisfecho con mi compra."
+    },
+    {
+        "id": "29",
+        "producto": "9",
+        "estrellas": 3,
+        "comentario": "Es justo lo que esperaba."
+    },
+    {
+        "id": "30",
+        "producto": "12",
+        "estrellas": 3,
+        "comentario": "Son unas botas muy resistentes."
+    },
+    {
+        "id": "31",
+        "producto": "13",
+        "estrellas": 4,
+        "comentario": "Resultaron ser bastante cómodas."
+    },
+    {
+        "id": "32",
+        "producto": "8",
+        "estrellas": 3,
+        "comentario": "Es un buen producto para su precio."
+    },
+    {
+        "id": "33",
+        "producto": "15",
+        "estrellas": 5,
+        "comentario": "Funciona genial."
+    },
+    {
+        "id": "34",
+        "producto": "17",
+        "estrellas": 5,
+        "comentario": "Entregado a tiempo. En perfecto estado como se esperaba. Gracias."
+    },
+    {
+        "id": "35",
+        "producto": "18",
+        "estrellas": 4,
+        "comentario": "Uso este flexómetro para trabajos de herrería estructural y hasta el momento no me ha fallado, sigue funcionando perfecto después de 3 meses de uso diario."
+    }
+]

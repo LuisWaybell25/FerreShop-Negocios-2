@@ -1,0 +1,211 @@
+[
+    {
+        "id": "1",
+        "imagen": "https://i.postimg.cc/8zWbyTM6/2727-20-C-5.jpg",
+        "nombre": "M18 FUEL MOTOSIERRA",
+        "descripcion": "Motosierra M18 Fuel inlámbrico de 16 pulgadas Powestate sin escobillas Milwaukee, es adecuada para realizar cortes en materiales como madera dura.",
+        "precio": 13649,
+        "existencias": 15,
+        "categoria": "Herramientas manuales",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 4 
+    },
+    {
+        "id": "2",
+        "imagen": "https://i.postimg.cc/HkGw8FRs/2767-22-2.jpg",
+        "nombre": "Milwaukee 2962-20 M18 18V Fuel",
+        "descripcion": "El control de apagado automático no aplica más de 10,7 m. lbs. de par para aplicaciones de fijación apretadas a mano para evitar un exceso de fuerza.",
+        "precio": 4227,
+        "existencias": 25,
+        "categoria": "Herramientas manuales",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "3",
+        "imagen": "https://i.postimg.cc/MGFw5kBg/4102U.jpg",
+        "nombre": "Surtek 115082 Pinza de Presión",
+        "descripcion": "Palanca de liberación de bloqueo recubierta con plastisol.",
+        "precio": 137,
+        "existencias": 30,
+        "categoria": "Herramientas manuales",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 4 
+    },
+    {
+        "id": "4",
+        "imagen": "https://i.postimg.cc/v85bdNfw/EA1009A.jpg",
+        "nombre": "Esmeriladora Angular, 4 1/2",
+        "descripcion": "Tiempo de operación: 50 min/15 min.",
+        "precio": 2370,
+        "existencias": 45,
+        "categoria": "Herramientas manuales",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 3 
+    },
+    {
+        "id": "5",
+        "imagen": "https://i.postimg.cc/pd8CGz5x/SKB920.jpg",
+        "nombre": "Sierra Caladora Pendular Urrea",
+        "descripcion": "Mica protectora contra residuos. Base inclinable 0 a 45° para cortes de bisel.",
+        "precio": 2640,
+        "existencias": 15,
+        "categoria": "Herramientas manuales",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "6",
+        "imagen": "https://i.postimg.cc/0QtF07Jn/COMP825.jpg",
+        "nombre": "Compresor 2hp 25l Urrea Comp825",
+        "descripcion": "Máxima presión de trabajo: 116 PSI-Potencia: 2hp-Capacidad del tanque: 25l.",
+        "precio": 7623,
+        "existencias": 20,
+        "categoria": "Herramientas eléctricas",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 1 
+    },
+    {
+        "id": "7",
+        "imagen": "https://i.postimg.cc/9fsCctzS/2715-22-HD-kit.jpg",
+        "nombre": "Milwuakee 2804-22 Drill Kit M18 Fuel 1/2 Hammer",
+        "descripcion": "Incluye Taladro percutor M18 FUEL, Paquete de baterías de capacidad extendida M18 REDLITHIUM XC5.0.",
+        "precio": 8655,
+        "existencias": 30,
+        "categoria": "Herramientas eléctricas",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 4 
+    },
+    {
+        "id": "8",
+        "imagen": "https://i.postimg.cc/0Q81f8Xk/RAR075.jpg",
+        "nombre": "Soldadora 250 Amps 2 Ciclos",
+        "descripcion": "Trabaja 2 ciclos de 2 min. de operación x 8 min. de descanso, el tercer ciclo de 2 minutos de operación requiere de un periodo de 30 min. de descanso.",
+        "precio": 2209,
+        "existencias": 20,
+        "categoria": "Herramientas eléctricas",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 3 
+    },
+    {
+        "id": "9",
+        "imagen": "https://i.postimg.cc/4xxgV4MX/BC675.jpg",
+        "nombre": "Bomba Centrífuga Surtek",
+        "descripcion": "Ciclo de trabajo 50 min operación/20 min descanso.",
+        "precio": 2146,
+        "existencias": 15,
+        "categoria": "Herramientas eléctricas",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 2 
+    },
+    {
+        "id": "10",
+        "imagen": "https://i.postimg.cc/RZHTPK2d/EB906.jpg",
+        "nombre": "Esmeril De Banco 6 .75hp",
+        "descripcion": "Esmeril de banco 6 .75HP 570W 127V 1 fase uso pesado Urrea.",
+        "precio": 3975,
+        "existencias": 40,
+        "categoria": "Herramientas eléctricas",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "11",
+        "imagen": "https://i.postimg.cc/T1GTLVgP/137579.jpg",
+        "nombre": "Surtek 144537 Foy Bota de Seguridad Negra",
+        "descripcion": "Calzado de seguridad con puntera de acero resistente al impacto y a la compresión. Suela de hule resistente a la abrasión y a solventes y derivados del petroleo.",
+        "precio": 647,
+        "existencias": 20,
+        "categoria": "Calzado de seguridad",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 4 
+    },
+    {
+        "id": "12",
+        "imagen": "https://i.postimg.cc/x1qnzTJL/USZD10.jpg",
+        "nombre": "Urrea Bota de Seguridad",
+        "descripcion": "Agujeta fabricada en poliéster con alma de algodón de 115 cm. Suela fabricada de poliuretano de alta densidad. Suela ultra resistente al desgaste, cómoda y ligera.",
+        "precio": 1468,
+        "existencias": 15,
+        "categoria": "Calzado de seguridad",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 3 
+    },
+    {
+        "id": "13",
+        "imagen": "https://i.postimg.cc/ZqxGsCQ9/81a-Oloo-DKBL-AC-SL1500.jpg",
+        "nombre": "Botas de Seguridad Dieléctrica Top Confort",
+        "descripcion": "Bullón acojinado, protección para el talón de Aquiles, tendón y tobillo.",
+        "precio": 1430,
+        "existencias": 40,
+        "categoria": "Calzado de seguridad",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 1 
+    },
+    {
+        "id": "14",
+        "imagen": "https://i.postimg.cc/QMCzm0cz/81-DIEt1l-OZL-AC-SL1500.jpg",
+        "nombre": "Urrea USZS75 Botas de Seguridad Dieléctrica",
+        "descripcion": "Plantilla de poliuretano alta densidad antifatiga, antimicótica y antibacterial, altamente confortable, removible y lavable.",
+        "precio": 1223,
+        "existencias": 50,
+        "categoria": "Calzado de seguridad",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "15",
+        "imagen": "https://i.postimg.cc/c19twPgG/2405.jpg",
+        "nombre": "Gato hidráulico de botella 12ton",
+        "descripcion": "Extensión roscada que se ajusta para acomodarse a la altura del trabajo. Ideal para levantar autos o camiones. Orificio de llenado y verificación del aceite.",
+        "precio": 6293,
+        "existencias": 30,
+        "categoria": "Herramientas de medición",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "16",
+        "imagen": "https://i.postimg.cc/T2gnmTML/51-V9-XDGm-Rr-L-AC-SL1000.jpg",
+        "nombre": "Electrónica Digital Calibrador de Pantalla 6",
+        "descripcion": "Calibrador alta precisión está hecho de compuestos de fibra de carbono, con rodillo moleteado y tornillo de bloqueo para usar en condiciones difíciles.",
+        "precio": 199,
+        "existencias": 20,
+        "categoria": "Herramientas de medición",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "17",
+        "imagen": "https://i.postimg.cc/KYCgkH0D/B122080.jpg",
+        "nombre": "Surtek B122081 Flexómetro Anti-Impacto, 5m x 1",
+        "descripcion": "Sistema con amortiguador que absorbe el impacto al regreso de la cinta. Cinta ancha que permite extenderse a una longitud mayor sin doblarse.",
+        "precio": 195,
+        "existencias": 50,
+        "categoria": "Herramientas de medición",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 5 
+    },
+    {
+        "id": "18",
+        "imagen": "https://i.postimg.cc/vBRcH6mP/71-Zm-Hyfo8m-L-AC-SL1500.jpg",
+        "nombre": "Truper FH-8M, Flexómetro Gripper,",
+        "descripcion": "Carcasa de ABS y cubierta de TPR resistente a impactos.",
+        "precio": 190,
+        "existencias": 20,
+        "categoria": "Herramientas de medición",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 4 
+    },
+    {
+        "id": "19",
+        "imagen": "https://i.postimg.cc/bJ8pB0rj/61l-Ze-PF4a3-L-AC-SL1500.jpg",
+        "nombre": "Nivel torpedo magnético",
+        "descripcion": "Base con discos de neodimio, que aseguran un alto nivel de sujeción magnética para trabajar a manos libres en vigas de acero.",
+        "precio": 175,
+        "existencias": 15,
+        "categoria": "Herramientas de medición",
+        "resenia": "Es un excelente producto, lo volveria a adquirir",
+        "calificacion": 3 
+    }
+]

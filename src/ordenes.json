@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "imagen": "https://i.postimg.cc/8zWbyTM6/2727-20-C-5.jpg",
+        "nombre": "MOTOSIERRA",
+        "descripcion": "Motosierra M18 Fuel inlámbrico de 16 pulgadas Powestate sin escobillas Milwaukee, es adecuada para realizar cortes en materiales como madera dura.",
+        "precio": 13649,
+        "existencias": 15,
+        "categoria": "Herramientas manuales",
+        "entrega": "15/12/2022"
+    },
+    {
+        "id": "7",
+        "imagen": "https://i.postimg.cc/9fsCctzS/2715-22-HD-kit.jpg",
+        "nombre": "Milwuakee 2804-22 Drill Kit M18 Fuel 1/2 Hammer",
+        "descripcion": "Incluye Taladro percutor M18 FUEL, Paquete de baterías de capacidad extendida M18 REDLITHIUM XC5.0.",
+        "precio": 8655,
+        "existencias": 30,
+        "categoria": "Herramientas eléctricas", 
+        "entrega": "18/12/2022"
+    },
+    {
+        "id": "10",
+        "imagen": "https://i.postimg.cc/RZHTPK2d/EB906.jpg",
+        "nombre": "Esmeril De Banco 6 .75hp",
+        "descripcion": "Esmeril de banco 6 .75HP 570W 127V 1 fase uso pesado Urrea.",
+        "precio": 3975,
+        "existencias": 40,
+        "categoria": "Herramientas eléctricas",
+        "entrega": "20/12/2022"
+    },
+    {
+        "id": "12",
+        "imagen": "https://i.postimg.cc/x1qnzTJL/USZD10.jpg",
+        "nombre": "Urrea Bota de Seguridad",
+        "descripcion": "Agujeta fabricada en poliéster con alma de algodón de 115 cm. Suela fabricada de poliuretano de alta densidad. Suela ultra resistente al desgaste, cómoda y ligera.",
+        "precio": 1468,
+        "existencias": 15,
+        "categoria": "Calzado de seguridad",
+        "entrega": "25/12/2022"
+    },
+    {
+        "id": "19",
+        "imagen": "https://i.postimg.cc/bJ8pB0rj/61l-Ze-PF4a3-L-AC-SL1500.jpg",
+        "nombre": "Nivel torpedo magnético",
+        "descripcion": "Base con discos de neodimio, que aseguran un alto nivel de sujeción magnética para trabajar a manos libres en vigas de acero.",
+        "precio": 175,
+        "existencias": 15,
+        "categoria": "Herramientas de medición",
+        "entrega": "26/12/2022"
+    }
+]

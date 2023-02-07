@@ -1,0 +1,112 @@
+:root {
+    --bg: #ffffff;/*#242526;*/
+    --bg-accent: #b6b6b6;/*#484a4d;*/
+    --text-color: #242526;/*#dadce1;*/
+    --nav-size: 60px;
+    /* --border: 1px solid #474a4d; */
+    --border: 1px solid var(--bg-accent);
+    --border-radius: 8px;
+    --speed: 500ms;
+}
+
+.navbar-admin-title{
+    margin: auto 0;
+    padding: 0;
+    font-weight: 500;
+    width: 30%;
+    font-size: 1.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.navbar-admin-button {
+    background: var(--bg);
+    height: 2rem;
+    margin: auto 10px auto auto;
+    padding: 0.25;
+    border: var(--border);
+    border-radius: 4px;
+    text-transform: none;
+    font-family: unset;
+    font-size: 0.875rem;
+    /* font-weight: 500; */
+    color: #3C4043;
+    cursor: pointer;
+}
+
+.navbar-admin-button:hover{
+    background: rgb(245, 245, 245);
+    transition: all 0.35s ease;
+}
+.navbar-admin-button:active{
+    background: rgb(240, 240, 240);
+    transition: all 0.1s ease;
+}
+
+/* se añade este esilo para sobrescribir el valor por defecto de materialize*/
+.navbar-admin-button:focus{
+    background-color:inherit;
+}
+
+.navbar-admin-select{
+    margin: auto 10px; /*10px 10px auto;*/
+    padding: 0px 3px;
+    border: var(--border);
+    border-radius: 4px;
+    justify-self: end;
+    width: fit-content;
+    height: 60%;
+    /* margin-left: auto; */
+}
+
+.navbar-admin ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-self: end;
+    /* margin-left: auto; */
+}
+
+.navbar-admin ul a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navbar-admin {
+    height: var(--nav-size);
+    /* max-width: 100%;
+    width: 100%; */
+    width: auto;
+    background-color: var(--bg);
+    padding: 0 1rem;
+    margin-left: 16rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar-admin-nav {
+    max-width: 100%;
+    /* width: 100%; */
+    height: 100%;
+    /* align-self: flex-end; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* gap: 0.5rem; */
+    margin: auto 10px auto auto;
+}
+
+.navbar-admin-nav .nombre{
+    font-weight: 500;
+    margin: auto 0;
+}
+
+/* Pantallas pequeñas  */
+@media only screen and (max-width: 600px) {
+    .navbar-admin {
+        margin-left: 0;
+    }
+}
