@@ -26,7 +26,7 @@ const TopBar = () => {
         localStorage.setItem('isLogged', false);
     }
 
-    const usuario = 'Juan González'
+    const usuario = 'Luis Waybell'
 
     return (
         <nav className='navbar-admin z-depth-0'>
