@@ -32,7 +32,7 @@ const LayoutTienda = () => {
             </Nav>
             <Nav>
               <Nav.Link as={Link} to={`/carrito`}> Carrito</Nav.Link>
-              <NavDropdown title="Juan González" id="collasible-nav-dropdown">
+              <NavDropdown title="Luis Waybell" id="collasible-nav-dropdown">
                 <NavDropdown.Item as={Link} to={`/perfil`}>Perfil</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={`/wishlist`}>Lista de deseos</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={`/mis_compras`}>Mis compras</NavDropdown.Item>
