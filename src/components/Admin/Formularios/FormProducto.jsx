@@ -7,12 +7,16 @@ import DragDropImage from './DragDropImage';
 
 import dataCategorias from '../../../categorias.json';
 
+import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
+import firebaseConfig from '../../../utils/firebaseConfig';
+const db = getFirestore(firebaseConfig);
+
+
 const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
     
     const [validated, setValidated] = useState(false);
 
     const [datosForm, setDatosForm] = useState(datos ?? {
-        id: '',
         nombre: '',
         descripcion: '',
         precio: '',
@@ -21,7 +25,7 @@ const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
         categoria: ''
     });
 
-    const { id, nombre, descripcion, precio, existencias, imagen, categoria }  = datosForm;
+    const { nombre, descripcion, precio, existencias, imagen, categoria }  = datosForm;
 
     const actualizarInfoForm = (propiedad, valor) => {
         setDatosForm({
@@ -30,7 +34,7 @@ const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
         });
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -41,6 +45,12 @@ const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
         
         setValidated(true);
         afterValidationAction(datosForm);
+
+
+        // Se guardan los datos generales del paciente
+        const docProductosRef = doc(collection(db, "productos"));
+        await setDoc(docProductosRef, datosForm);
+
     };
 
     
