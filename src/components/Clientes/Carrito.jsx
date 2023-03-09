@@ -18,7 +18,7 @@ const Carrito = () => {
         let totalAcumulado = 0;
 
         productsCart.map((product) => {
-            totalAcumulado += product.precio;
+            totalAcumulado += parseInt(product.precio);
         });
         setTotal(parseInt(totalAcumulado));
 
@@ -61,6 +61,8 @@ const Carrito = () => {
                                         limite={producto.existencias}
                                         precio={producto.precio}
                                         total={total}
+                                        setProducts={setProducts}
+                                        products={products}
                                     />
                                 </ListItemProducto>
                             )
@@ -68,7 +70,7 @@ const Carrito = () => {
                     </div>
                     <div className='total'>
                         <CardSubtotal
-                            total={total.toLocaleString("es-MX")}
+                            total={total.toLocaleString("es-MX")} products={products}
                         />
                     </div>
                 </>

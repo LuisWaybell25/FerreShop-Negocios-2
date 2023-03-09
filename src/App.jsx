@@ -20,17 +20,23 @@ import AdminProductos from './components/Admin/AdminProductos';
 import Usuarios from './components/Admin/Usuarios';
 import PoliticaCookies from './components/Clientes/PoliticaCookies'
 import Perfil from './components/Clientes/Perfil'
+import Cotizaciones from './components/Clientes/Cotizaciones'
+import AdminCotizaciones from './components/Admin/AdminCotizaciones'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import AuthProvider from './context/AuthContext';
 
 function App() {
 
   return (
+    <AuthProvider>
     <BrowserRouter>
         <div className='App'>
             <Routes>
                 <Route exact path='/' element={<LayoutTienda/>}>
                     <Route index element={<Home/>} />
+
                     <Route path='cookies' element={<PoliticaCookies/>} />
                     <Route path="categorias" element={<Categorias />}>
                         <Route path=":categoriaId" element={<Categoria />} />
@@ -39,13 +45,16 @@ function App() {
                         <Route path=":id" element={<Producto />} />
                     </Route>
                     <Route path='carrito' element={<Carrito/>} />
+                    <Route path='cotizaciones' element={<Cotizaciones/>} />
                     <Route path='wishlist' element={<WishList/>} />
                     <Route path='mis_compras' element={<MisCompras/>} />
                     <Route path='perfil' element={<Perfil/>} />
                 </Route>
 
                 <Route exact path='consola' element={<LayoutAdmin/>}>
-                    <Route index element={<Compras/>} />
+                    <Route index element={<AdminCotizaciones/>} />
+                    <Route path='cotizaciones' element={<AdminCotizaciones/>} />
+                    <Route path='compras' element={<Compras/>} />
                     <Route path='compras' element={<Compras/>} />
                     <Route path='productos' element={<AdminProductos/>} />
                     <Route path='categorias' element={<AdminCategorias/>} />
@@ -57,6 +66,7 @@ function App() {
             </Routes>
         </div>
     </BrowserRouter>
+    </AuthProvider>
   )
 }
 

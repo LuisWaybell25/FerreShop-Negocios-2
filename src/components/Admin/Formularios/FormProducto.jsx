@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -11,8 +11,28 @@ import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
 import firebaseConfig from '../../../utils/firebaseConfig';
 const db = getFirestore(firebaseConfig);
 
+// Firebase de firebase storage
+import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
+const storage = getStorage(firebaseConfig);
 
-const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
+import { v4 as uuidv4 } from "uuid";
+
+const FormProducto = ({ datos, afterValidationAction, data, setData, handleClose, getProducts, setActualizar}) => {
+
+    const [url, setUrl] = useState("");
+
+    useEffect(() => {
+      if(datos?.imagen != null) {
+        getDownloadURL(ref(storage, 'products/' + datos.imagen))
+        .then((url) => {
+            
+            setUrl(url);
+        })
+        .catch((error) => {
+            
+        });
+      }
+    }, [])
     
     const [validated, setValidated] = useState(false);
 
@@ -36,22 +56,35 @@ const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.stopPropagation();
-            setValidated(true);
-            return;
-        }
-        
-        setValidated(true);
-        afterValidationAction(datosForm);
 
+        const imageName = uuidv4();
+        const image = datosForm.imagen;
+
+        const productsData = {
+            nombre: datosForm.nombre,
+            descripcion: datosForm.descripcion,
+            precio: datosForm.precio,
+            existencias: datosForm.existencias,
+            imagen: imageName,
+            categoria: datosForm.categoria
+        }
+
+        const storageRef = ref(storage, `products/${imageName}`);
+        uploadBytes(storageRef, image).then((snapshot) => {
+            
+        });
 
         // Se guardan los datos generales del paciente
         const docProductosRef = doc(collection(db, "productos"));
-        await setDoc(docProductosRef, datosForm);
+        await setDoc(docProductosRef, productsData);
 
-    };
+        handleClose();
+
+        getProducts();
+
+        setActualizar(true);
+
+    };    
 
     
     return (
@@ -59,7 +92,7 @@ const FormProducto = ({ datos, afterValidationAction, data, setData}) => {
             <Row className="mb-1">
                 <Form.Group  as={Col} controlId="exampleForm.ControlFile1">
                     <Form.Label>Imagen</Form.Label>
-                    <DragDropImage imagen={imagen} setImagen={(imagen) => actualizarInfoForm('imagen', imagen)}/>
+                    <DragDropImage url={url} imagen={imagen} setImagen={(imagen) => actualizarInfoForm('imagen', imagen)}/>
                     <Form.Control.Feedback type="invalid">
                         Por favor añada una imagen.
                     </Form.Control.Feedback>

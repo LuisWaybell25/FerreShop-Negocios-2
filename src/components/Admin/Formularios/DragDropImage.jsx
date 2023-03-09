@@ -1,13 +1,18 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Form from 'react-bootstrap/Form';
 
 import './DragDropImage.css';
 
-const DragDropImage = ({imagen, setImagen}) => {
+const DragDropImage = ({imagen, setImagen, url}) => {
     // state de arrastre
     const [dragActive, setDragActive] = useState(false);
     // Referencia al input
     const inputRef = useRef(null);
+
+    useEffect(() => {
+        handleImage();
+    }, [url])
+    
     
     const handleDrag = function(e) {
         e.preventDefault();
@@ -31,7 +36,6 @@ const DragDropImage = ({imagen, setImagen}) => {
     // cuando se selecciona el archivo con un click
     const handleChange = function(e) {
         e.preventDefault();
-        console.log(e.target.files[0]);
         if (e.target.files.length > 0 && e.target.files[0]) 
             setImagen(e.target.files[0])
     };
@@ -40,6 +44,12 @@ const DragDropImage = ({imagen, setImagen}) => {
     const onButtonClick = () => {
         inputRef.current.click();
     };
+
+    const handleImage = () => {
+        if(url !== "") {
+            setImagen(url);
+        }
+    }
 
     return (
         <>
@@ -54,6 +64,7 @@ const DragDropImage = ({imagen, setImagen}) => {
                 // id="input-file-upload"
                 onChange={handleChange} 
             />
+            
             {imagen 
                 ? 
                 <div className={dragActive ? "drag-active dragImageContainer" : "dragImageContainer" } onClick={onButtonClick} >

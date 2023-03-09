@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Chip from '@mui/material/Chip';
 import Rating from '@mui/material/Rating';
 import Checkbox from '@mui/material/Checkbox';
@@ -10,6 +10,10 @@ import Button from 'react-bootstrap/Button';
 import './Producto.css';
 
 import Swal from 'sweetalert2';
+
+import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
+import firebaseConfig from '../../utils/firebaseConfig'
+const storage = getStorage(firebaseConfig);
 
 const InformaciónPrincipal = ({id, imagen, nombre, precio, existencias, categoria, descripcion, calificacion, resenia}) => {
     const [favorito, setFavorito] = useState(false);
@@ -75,10 +79,23 @@ const InformaciónPrincipal = ({id, imagen, nombre, precio, existencias, categor
         });
     }
 
+    const [image, setImage] = useState("");
+
+    useEffect(() => {
+        getDownloadURL(ref(storage, 'products/' + imagen))
+        .then((url) => {
+            
+            setImage(url)
+        })
+        .catch((error) => {
+            
+        });
+    }, [])
+
     return (
         <div className="contenedor-informacion gap">
                 <div className='img-contenedor'>
-                    <img className='preview-image' src={imagen} alt="imagen libro" />
+                    <img className='preview-image' src={image} alt="imagen libro" />
                 </div>
                 <div  className='info-contenedor'>
                     <div className='titulo-contenedor'>

@@ -15,18 +15,22 @@ import useConfigFormulario from '../../hooks/useConfigFormulario';
 
 import datos from '../../productos.json';
 
+import { getFirestore, collection, doc, setDoc, onSnapshot, query, deleteDoc } from "firebase/firestore";
+import firebaseConfig from '../../utils/firebaseConfig';
+const db = getFirestore(firebaseConfig);
+
 import './Admin.css';
+import Product from './Product';
 
 const AdminProductos = () => {
 
-    const [data, setData] = useState(datos)
+    const [data, setData] = useState(datos);
+
+    const [products, setProducts] = useState([]);
+
+    const [actualizar, setActualizar] = useState(false);
 
     const agregarProducto = (datos) => {
-
-        const url = URL.createObjectURL(datos.imagen);
-        datos.imagen = url;
-
-        setData([...data, datos]);
 
         handleClose()
     }
@@ -39,7 +43,7 @@ const AdminProductos = () => {
                 producto.descripcion = datos.descripcion;
                 producto.precio = datos.precio;
                 producto.existencias = datos.existencias;
-                producto.imagen = typeof datos.imagen === 'object' ? URL.createObjectURL(datos.imagen) : datos.imagen;
+                producto.imagen = datos.imagen;
                 producto.categoria = datos.categoria;
             }
             return producto;
@@ -55,10 +59,40 @@ const AdminProductos = () => {
         fnEditar: modificarProducto
     });
 
-    const eliminar = (id) => {
-        let newProducts = data.filter(producto => producto.id !== id);
-        setData(newProducts);
+    const eliminar = async (id) => {
+
+        await deleteDoc(doc(db, "productos", id)).then(() => {
+            let newProducts = data.filter(producto => producto.id !== id);
+            setData(newProducts);
+        })
+        .catch((error) => {
+            
+        });
     }
+
+    const getProducts = () => {
+        const q = query(collection(db, "productos"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            
+            const arrayProductos = [];
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                data.id = doc.id;
+                arrayProductos.push(data);
+            });
+            
+            setProducts(arrayProductos);
+            
+        });
+
+        return () => {
+            unsubscribe()
+        }
+    }
+
+    useEffect(() => {
+        getProducts();
+    }, [])
 
     return (
         <div>
@@ -90,20 +124,10 @@ const AdminProductos = () => {
                         </thead>
                         <tbody>
 
-                            {data.map(producto => {
+                            {products.map(producto => {
+                                
                                 return (
-                                    <tr key={producto.id}>
-                                        <td><img className='product-img' src={producto.imagen}/></td>
-                                        <td>{producto.nombre}</td>
-                                        <td>{producto.descripcion}</td>
-                                        <td>${(producto.precio).toLocaleString("es-MX")}</td>
-                                        <td>{producto.existencias}</td>
-                                        <td>{producto.categoria}</td>
-                                        <td>
-                                            <IconButton onClick={() => editar({id: producto.id, imagen: producto.imagen, nombre: producto.nombre, descripcion: producto.descripcion, precio: producto.precio, existencias: producto.existencias, categoria: producto.categoria})}> <EditIcon/> </IconButton>
-                                            <IconButton onClick={() => eliminar(producto.id)}> <DeleteIcon/> </IconButton>
-                                        </td>
-                                    </tr>
+                                    <Product key={producto.id} producto={producto} editar={editar} eliminar={eliminar} actualizar={actualizar} />
                                 )
                             })}
                         </tbody>
@@ -111,7 +135,7 @@ const AdminProductos = () => {
                 </div>
 
                 <ModalFormulario size="lg" seccion="producto" estado={configForm.estado} show={show} onHide={handleClose}>
-                    <FormProducto datos={configForm.datos} afterValidationAction={configForm.accion} data={data} setData={setData} />
+                    <FormProducto datos={configForm.datos} afterValidationAction={configForm.accion} data={data} setData={setData} handleClose={handleClose} getProducts={getProducts} setActualizar={setActualizar} />
                 </ModalFormulario>
 
             </main>

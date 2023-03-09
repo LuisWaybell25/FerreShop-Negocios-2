@@ -9,6 +9,9 @@ import "./TopBar.css";
 
 import { useNavigate } from 'react-router-dom';
 
+import firebase from '../../utils/firebaseConfig';
+import { getAuth } from "firebase/auth";
+
 const TopBar = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -22,11 +25,14 @@ const TopBar = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        navigate("/login");
-        localStorage.setItem('isLogged', false);
+        getAuth(firebase).signOut().then(() => {
+            navigate('/login');
+        }).catch((error) => {
+            
+        });
     }
 
-    const usuario = 'Luis Waybell'
+    const usuario = 'Administrador'
 
     return (
         <nav className='navbar-admin z-depth-0'>

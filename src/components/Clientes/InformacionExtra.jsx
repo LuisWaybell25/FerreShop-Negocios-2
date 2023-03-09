@@ -9,11 +9,11 @@ const InformacionExtra = ({idProducto, descripcion, resenia, calificacion}) => {
             <h3 className='titulo-seccion'>Descripción</h3>
             <p className='descripcion'>{descripcion}</p>
         
-            <Opiniones 
+            {/* <Opiniones 
                 idProducto={idProducto}
                 resenia={resenia}
                 calificacion={calificacion}
-            />
+            /> */}
         </div>
     );
 }

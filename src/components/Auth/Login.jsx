@@ -8,8 +8,30 @@ import { useNavigate } from "react-router-dom";
 
 import './Login.css';
 
+// Firebase 
+import firebaseConfig from '../../utils/firebaseConfig';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+const auth = getAuth(firebaseConfig);
+
 
 const Login = () => {
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                if(user.email === "admin@gmail.com") {
+                    navigate("/consola");
+                } else if(user.email === "ventas@gmail.com") {
+                    navigate("/consola");
+                } else { 
+                    navigate("/");
+                }
+            } else {
+                navigate("/login");
+            }
+        });
+    }, [])
+    
 
     const [credenciales, setCredenciales] = useState({
         email: '',
@@ -28,15 +50,27 @@ const Login = () => {
     const navigate = useNavigate();
 
     const login = () => {
-        
-        
-        if(email === "admin@gmail.com") {
-            navigate("/consola");
-            localStorage.setItem('isLogged', true);
-        } else {
-            navigate("/");
-            localStorage.setItem('isLogged', true);
-        }
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+
+            const user = userCredential.user;
+            if (user) {
+                if(user.email === "admin@gmail.com") {
+                    navigate("/consola");
+                } else if(user.email === "ventas@gmail.com") {
+                    navigate("/consola");
+                } else { 
+                    navigate("/");
+                }
+            } else {
+                navigate("/login");
+            }
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
     }
 
     return (

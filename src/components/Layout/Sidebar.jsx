@@ -1,4 +1,4 @@
-import { BsCashCoin, BsPeople, BsViewStacked, BsBag, BsPen, BsPersonBadge, BsFileText, } from "react-icons/bs";
+import { BsCashCoin, BsPeople, BsViewStacked, BsBag, BsCalculator, BsPersonBadge, BsFileText, } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import './Sidebar.css';
 
@@ -11,6 +11,12 @@ const Sidebar = () => {
                     {/* <img src={logo} alt='logo'/> */}
                     <span className='link-text'>Ferreshop</span>
                 </div>
+                <li className='sidenav-item'>
+                    <NavLink to="/consola/cotizaciones" exact="true" className={({ isActive }) => isActive ? "active-link sidenav-link" : "sidenav-link"}>
+                        <BsCalculator/>
+                        <span className='link-text'>Cotizaciones</span>
+                    </NavLink>
+                </li>
 
                 <li className='sidenav-item'>
                     <NavLink to="/consola/compras" exact="true" className={({ isActive }) => isActive ? "active-link sidenav-link" : "sidenav-link"}>

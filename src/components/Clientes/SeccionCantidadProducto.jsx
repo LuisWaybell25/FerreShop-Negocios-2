@@ -3,11 +3,14 @@ import Button from 'react-bootstrap/Button';
 import { BsPlusLg, BsDashLg } from "react-icons/bs";
 import '../../App.css';
 
-const SeccionCantidadProducto = ({limite, setTotal, precio, total}) => {
+const SeccionCantidadProducto = ({limite, setTotal, precio, total, products, setProducts}) => {
 
     const [cantidad, setCantidad] = useState(1)
 
     const handleAdd = () => {
+        
+
+        //setProducts([...products, ])
 
         const totalAdd = parseInt(total) + parseInt(precio);
         setTotal(totalAdd);

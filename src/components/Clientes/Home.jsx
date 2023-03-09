@@ -30,6 +30,10 @@ import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
 import './home.css';
 
+import { getFirestore, collection, doc, setDoc, onSnapshot, query, deleteDoc } from "firebase/firestore";
+import firebaseConfig from '../../utils/firebaseConfig';
+const db = getFirestore(firebaseConfig);
+
 const Home = () => {
     
     const [products, setProducts] = useState([])
@@ -41,18 +45,29 @@ const Home = () => {
 
     useEffect(() => {
 
-        setProducts(data);
-
-        const logged =  JSON.parse(localStorage.getItem('isLogged'));
-
-        if(logged === false) {
-            navigate("/login");
-        }
+        const q = query(collection(db, "productos"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            
+            const arrayProductos = [];
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                data.id = doc.id;
+                arrayProductos.push(data);
+            });
+            
+            setProducts(arrayProductos);
+            
+        });
         
         if(matches) {
             setImagenesCarrusel([banner4,banner5,banner6]);
         } else {
             setImagenesCarrusel([banner1,banner2,banner3]);
+        }
+
+        
+        return () => {
+            unsubscribe()
         }
 
     }, [matches])
@@ -171,12 +186,12 @@ const Home = () => {
                 </div>
             </div>
             
-            <div className="cookie-banner-container" id='cookieContainer'>
+            {/* <div className="cookie-banner-container" id='cookieContainer'>
                 <h3 className="title">Cookies</h3>
                 <p className="cookie-info">Algunas cookies son necesarias para fines técnicos, por lo que están exentas de consentimiento. Otras, no obligatorias, pueden utilizarse para anuncios y contenidos personalizados, medición de anuncios y contenidos, conocimiento de la audiencia y desarrollo de productos, datos precisos de geolocalización e identificación a través del escaneo de dispositivos, almacenar y/o acceder a información en un dispositivo.</p>
                 <p role="button" className="confirm-button" onClick={hideCookieContainer}>Aceptar Cookies</p>
                 <Link to='cookies' >Revisar Politica de Cookies</Link>
-            </div>
+            </div> */}
         </>
     );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Rating from '@mui/material/Rating';
 import Chip from '@mui/material/Chip';
@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 import './ListItemProducto.css';
 
 import Swal from 'sweetalert2';
+
+import { getStorage, uploadBytes, ref, getDownloadURL } from "firebase/storage";
+import firebaseConfig from '../../utils/firebaseConfig'
+const storage = getStorage(firebaseConfig);
+
 
 const CardProducto = ({id, imagen, nombre, precio, existencias, categoria, descripcion, calificacion, resenia}) => {
 
@@ -53,10 +58,23 @@ const CardProducto = ({id, imagen, nombre, precio, existencias, categoria, descr
         });
     }
 
+    const [image, setImage] = useState("");
+
+    useEffect(() => {
+        getDownloadURL(ref(storage, 'products/' + imagen))
+        .then((url) => {
+            
+            setImage(url)
+        })
+        .catch((error) => {
+            
+        });
+    }, [])
+
     return (
         <div className='item-libro card link' onClick={(e) => !e.target.className.includes('btn') ? navigate("/producto/123",{state: {id, imagen, nombre, precio, existencias, categoria, descripcion, calificacion, resenia}}) : null}>
             <p className='categoria'>{categoria}</p>
-            <img src={imagen} className='imagen'/>
+            <img src={image} className='imagen'/>
 
             <h4 className='title'>{nombre}</h4>
 
