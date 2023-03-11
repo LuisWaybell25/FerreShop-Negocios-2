@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 
 import Table from 'react-bootstrap/Table';
 
-import { getFirestore, collection, doc, updateDoc, onSnapshot, query, deleteDoc, where } from "firebase/firestore";
+import { getFirestore, collection, doc, updateDoc, onSnapshot, query, setDoc, where } from "firebase/firestore";
 import firebaseConfig from '../../utils/firebaseConfig';
 const db = getFirestore(firebaseConfig);
 
@@ -16,6 +16,8 @@ import Form from 'react-bootstrap/Form';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+
+import moment from 'moment';
 
 const Cotizaciones = () => {
 
@@ -31,6 +33,8 @@ const Cotizaciones = () => {
 
     const [total, setTotal] = useState(0);
 
+    const [productsCopy, setProductsCopy] = useState([])
+
     const [productsLenght, setProductsLenght] = useState(0);
 
     const handleCloseModal = () => setShowModal(false);
@@ -44,12 +48,14 @@ const Cotizaciones = () => {
         setTotal(totalAcumulado);
 
         setEditProductData(producto);
+        setProductsCopy(producto);
         setShowModal(true);
 
         setProductsLenght(producto.products.length)
     }
 
     useEffect(() => {
+        getProducts();
         if(user !== null) {
             const q = query(collection(db, "historialProcesos"),where("userUid", "==", user.uid), where("estado", "==", "activo"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -60,6 +66,8 @@ const Cotizaciones = () => {
                     data.id = doc.id;
                     arrayCotizaciones.push(data);
                 });
+
+                console.log(arrayCotizaciones);
 
                 setCotizaciones(arrayCotizaciones);
                 
@@ -75,6 +83,64 @@ const Cotizaciones = () => {
     const pay = async () => {
         await updateDoc(doc(db, "historialProcesos", editProductData.id), {estado: 'pagado'});
         handleCloseModal();
+    
+    }
+
+    const deleteProduct = async (id) => {
+        let newProducts = (editProductData.products).filter(producto => producto.id !== id);
+        setEditProductData({...editProductData, products: newProducts});
+    }
+
+    const save = async () => {
+        await updateDoc(doc(db, "historialProcesos", editProductData.id), {products: editProductData.products});
+        const docProductosRef = doc(collection(db, "historialProcesos", editProductData.id, "subcotizacion"));
+        
+        let fecha = moment().format("DD/MM/YYYY HH:mm:ss A");
+
+        const proceso = {
+            proceso: 'cotización',
+            products: productsCopy.products,
+            fecha: fecha,
+            estado: 'edicion',
+            userUid: productsCopy.userUid,
+        }
+        
+        await setDoc(docProductosRef, proceso);
+
+        handleCloseModal();
+    }
+
+    const [selectAddProduct, setSelectAddProduct] = useState([])
+
+    const getProducts = () => {
+        const q = query(collection(db, "productos"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            
+            const arrayProductos = [];
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                data.id = doc.id;
+                arrayProductos.push(data);
+            });
+            
+            setSelectAddProduct(arrayProductos);
+            
+        });
+    }
+
+    const [selectedProduct, setSelectedProduct] = useState({});
+
+    const handleSelectedProduct = (e) => {
+        let id = e.target.value;
+        setSelectedProduct(e.target.value);
+
+        let product = selectAddProduct.filter(producto => producto.id === id);
+
+        let editp = editProductData.products;
+
+        editp.push(...product)
+
+        setEditProductData({...editProductData, products: editp})
     }
 
     return (
@@ -120,7 +186,7 @@ const Cotizaciones = () => {
                                 </Form.Group>
                                 {productsLenght !== 1 ? (
                                     <Form.Group as={Col}>
-                                        <Button variant="danger"><DeleteIcon/></Button>
+                                        <Button variant="danger" onClick={() => deleteProduct(producto.id)}><DeleteIcon/></Button>
                                     </Form.Group>  
                                 ) : (
                                     <></>
@@ -129,11 +195,19 @@ const Cotizaciones = () => {
                         )
                     })}
 
-                    <div className="d-grid mt-3 mb-3">
-                        <Button variant="primary">
-                            Agegar productos
-                        </Button>
-                    </div>
+                    <Form.Select 
+                        aria-label="Agregar productos" 
+                        className='mb-3'
+                        onChange={handleSelectedProduct}
+                        value={selectedProduct.nombre}
+                    >
+                        <option>- Agregar productos -</option>
+                        {selectAddProduct?.map(product => {
+                            return (
+                                <option key={product.id} value={product.id}>{product.nombre} {'->'} {product.precio}</option>
+                            )
+                        })}
+                    </Form.Select>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Monto</Form.Label>
@@ -155,7 +229,7 @@ const Cotizaciones = () => {
                 <Button variant="secondary" onClick={handleCloseModal}>
                     Cerrar
                 </Button>
-                <Button variant="primary" onClick={handleCloseModal}>
+                <Button variant="primary" onClick={save}>
                     Guardar
                 </Button>
                 </Modal.Footer>
