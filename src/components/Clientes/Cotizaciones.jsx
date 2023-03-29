@@ -57,7 +57,7 @@ const Cotizaciones = () => {
     useEffect(() => {
         getProducts();
         if(user !== null) {
-            const q = query(collection(db, "historialProcesos"),where("userUid", "==", user.uid), where("estado", "==", "activo"));
+            const q = query(collection(db, "historialProcesos"), where("userUid", "==", user.uid), where("estado", "==", "activo"));
             const unsubscribe = onSnapshot(q, (querySnapshot) => {
                 
                 const arrayCotizaciones = [];
@@ -81,9 +81,19 @@ const Cotizaciones = () => {
     }, [user])
 
     const pay = async () => {
+        let fecha = moment().format("YYYY/MM/DD");
+
+        const venta = {
+            producto: editProductData.products[0].nombre,
+            cantidad: 1,
+            fecha
+        }
+
         await updateDoc(doc(db, "historialProcesos", editProductData.id), {estado: 'pagado'});
+        const docVentasRef = doc(collection(db, "ventas"));
+        await setDoc(docVentasRef, venta);
+
         handleCloseModal();
-    
     }
 
     const deleteProduct = async (id) => {

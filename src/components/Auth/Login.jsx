@@ -21,8 +21,8 @@ const Login = () => {
             if (user) {
                 if(user.email === "admin@gmail.com") {
                     navigate("/consola");
-                } else if(user.email === "ventas@gmail.com") {
-                    navigate("/consola");
+                } else if(user.email === "compras@gmail.com") {
+                    navigate("/consolacompras");
                 } else { 
                     navigate("/");
                 }
@@ -58,8 +58,8 @@ const Login = () => {
             if (user) {
                 if(user.email === "admin@gmail.com") {
                     navigate("/consola");
-                } else if(user.email === "ventas@gmail.com") {
-                    navigate("/consola");
+                } else if(user.email === "compras@gmail.com") {
+                    navigate("/consolacompras");
                 } else { 
                     navigate("/");
                 }

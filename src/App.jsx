@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom' 
 import LayoutTienda from './components/Layout/LayoutTienda'
 import LayoutAdmin from './components/Layout/LayoutAdmin'
+import LayoutCompras from './components/Layout/LayoutCompras'
 import Home from './components/Clientes/Home'
 import Categorias from './components/Clientes/Categorias';
 import Carrito from './components/Clientes/Carrito';
@@ -22,6 +23,7 @@ import PoliticaCookies from './components/Clientes/PoliticaCookies'
 import Perfil from './components/Clientes/Perfil'
 import Cotizaciones from './components/Clientes/Cotizaciones'
 import AdminCotizaciones from './components/Admin/AdminCotizaciones'
+import InformeVentas from './components/Admin/InformeVentas'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -49,6 +51,11 @@ function App() {
                     <Route path='wishlist' element={<WishList/>} />
                     <Route path='mis_compras' element={<MisCompras/>} />
                     <Route path='perfil' element={<Perfil/>} />
+                </Route>
+
+                <Route exact path='consolacompras' element={<LayoutCompras/>}>
+                    <Route path='compras' element={<Compras/>} />
+                    <Route path='informeventas' element={<InformeVentas/>} />
                 </Route>
 
                 <Route exact path='consola' element={<LayoutAdmin/>}>
