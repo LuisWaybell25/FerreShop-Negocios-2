@@ -32,7 +32,7 @@ const Compras = () => {
         });
     }
 
-    const [showPushSugerencia, setShowPushSugerencia] = useState(false);
+    const [showPushSugerencia, setShowPushSugerencia] = useState(true);
 
     useEffect(() => {
         getProducts();
@@ -42,7 +42,7 @@ const Compras = () => {
         let dia = moment().date();
         let mes = moment().month() + 1;
         
-        if((mes === 1 || mes === 3 || mes === 5 || mes === 7 || mes === 8 || mes === 10 || mes === 312) 
+        if((mes === 1 || mes === 3 || mes === 5 || mes === 7 || mes === 8 || mes === 10 || mes === 12) 
             && dia === 31 ) {
             setShowPushSugerencia(true);
         }
