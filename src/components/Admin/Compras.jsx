@@ -75,7 +75,11 @@ const Compras = () => {
         });
         
         if((cantidadPush / 6) >= 30) {
-            setPushProducts([arrayProductos[arrayProductos.length - 1]])
+            setPushProducts([
+                {nombre: 'Pinzas'},
+                {nombre: 'Taladro'},
+                {nombre: 'Botas'}
+            ])
         }
     }
 
